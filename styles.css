@@ -1,0 +1,65 @@
+.form-area
+{
+    background-color: #FAFAFA;
+	padding: 10px 40px 60px;
+	margin: 10px 0px 60px;
+	border: 1px solid GREY;
+	}
+
+.comment
+{
+    background-color: #ffffff;
+	padding: 10px 10px 30px;
+	margin: 10px 0px 15px;
+	border: 1px solid GREY;
+
+	}
+
+.comment .name
+{
+	background-color: #E8E8E8;
+    font-weight:700;
+	}
+
+.comment .date
+{
+	background-color: #E8E8E8;
+	font-size:10px;
+	right:15px;
+	top:10px;
+	color:#5e5e5e;
+	}
+
+.body
+{
+	padding-top: 10px;
+	text-align:left;
+	font-size:18px;
+	line-height:1.5;
+	width: 100%;
+	}
+.title-comment
+{
+	margin-bottom: 25px;
+	text-align: center;
+	}
+
+.com-but
+{
+	display: inline;
+	position: relative;
+	padding-bottom: 20px;
+	}
+.btn.btn-primary.btn-xs.pull-right.del
+{
+	margin-right: 5px;
+	}
+.error
+{
+	color: red;
+	font-size:12px;
+	}
+
+#addCommentForm h3 {
+	text-align: center;
+	}		
