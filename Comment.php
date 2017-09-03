@@ -9,16 +9,16 @@ class Comment
         $this->data = $row;
     }
 
-    //	This method outputs the XHTML markup of the comment
+    //	This method outputs the XHTML markup of the comment:
     public function markup()
     {
         // Setting up an alias, so we don't have to write $this->data every time:
         $d = &$this->data;
 
-        // Converting the time to a UNIX timestamp:
+        // Converting the time to UNIX timestamp:
         $d['dt'] = strtotime($d['dt']);
 
-        // Create comment div block
+        // Create comment div block:
         return '
 			    <div class="comment" id="d' . $d['id'] . '"> 
 				    <div class="name">' . $d['name'] . '</div>
@@ -34,14 +34,14 @@ class Comment
 		';
     }
 
-    // This method is used to validate the data sent via AJAX.
+    // This method is used to validate the data sent via AJAX:
     public static function validate(&$arr)
     {
 
         $errors = array();
         $data = array();
 
-        // Using the filter_input function
+        // Using the filter_input function:
         if (!($data['email'] = filter_input(INPUT_POST, 'email', FILTER_VALIDATE_EMAIL))) {
             $errors['email'] = '  Please enter a valid Email!';
         }
@@ -72,7 +72,7 @@ class Comment
         return true;
     }
 
-    //	This method is used internally as a FILTER_CALLBACK
+    //	This method is used internally FILTER_CALLBACK:
     private static function validate_text($str)
     {
         if (mb_strlen($str, 'utf8') < 1)
@@ -82,7 +82,7 @@ class Comment
         // the new line characters to <br> tags:
         $str = nl2br(htmlspecialchars($str));
 
-        // Remove the new line characters that are left
+        // Remove the new line characters that are left:
         $str = str_replace(array(chr(10), chr(13)), '', $str);
 
         return $str;

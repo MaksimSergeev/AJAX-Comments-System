@@ -1,65 +1,67 @@
-.form-area
-{
+.form-area {
     background-color: #FAFAFA;
 	padding: 10px 40px 60px;
 	margin: 10px 0px 60px;
 	border: 1px solid GREY;
-	}
-
-.comment
-{
+}
+.comment {
     background-color: #ffffff;
 	padding: 10px 10px 30px;
 	margin: 10px 0px 15px;
 	border: 1px solid GREY;
-
-	}
-
-.comment .name
-{
+}
+.comment .name {
 	background-color: #E8E8E8;
     font-weight:700;
-	}
-
-.comment .date
-{
+}
+.comment .date {
 	background-color: #E8E8E8;
 	font-size:10px;
 	right:15px;
 	top:10px;
 	color:#5e5e5e;
-	}
-
-.body
-{
+}
+.body {
 	padding-top: 10px;
 	text-align:left;
 	font-size:18px;
 	line-height:1.5;
 	width: 100%;
-	}
-.title-comment
-{
+}
+.title-comment {
 	margin-bottom: 25px;
 	text-align: center;
-	}
-
-.com-but
-{
+}
+.com-but {
 	display: inline;
 	position: relative;
 	padding-bottom: 20px;
-	}
-.btn.btn-primary.btn-xs.pull-right.del
-{
+}
+.btn.btn-primary.btn-xs.pull-right.del {
 	margin-right: 5px;
-	}
-.error
-{
+}
+.error {
 	color: red;
 	font-size:12px;
-	}
+}
 
 #addCommentForm h3 {
 	text-align: center;
-	}		
+}
+.dropdown {
+	position: relative;
+	display: inline-block;
+}
+.dropdown-content {
+	display: none;
+	position: absolute;
+	right: 0;
+	background-color: #f9f9f9;
+	min-width: 160px;
+	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+	z-index: 1;
+}
+#sort-head {
+	background-color: #E8E8E8;
+	margin-bottom: 20px;
+}

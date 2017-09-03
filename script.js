@@ -20,7 +20,7 @@ $(document).ready(function(){
 			
 			if(msg.status){
 
-				$(msg.html).hide().insertBefore('#addCommentContainer').slideDown();
+				$(msg.html).hide().appendTo('#content').slideDown();
 				$('#body').val('');
 			}
 			else {
@@ -78,7 +78,7 @@ $(document).on('click', '.edit', function(){
 });
 
 //Edit finish
-$(document).on('change', '.form-control', function(){
+$(document).on('change', '.form2', function(){
     var com_id = $('#com_id').val();
     com_body = this.value;
     $.ajax({
@@ -96,6 +96,19 @@ $(document).on('change', '.form-control', function(){
         //If errors
         error: function (jXHR, textStatus, errorThrown) {
             alert(jXHR +textStatus + errorThrown);
+        }
+    })
+});
+//Sort order
+$(document).on('click', '.name-a, .name-d, .email-a, .email-d, .date-a, .date-d', function(){
+    var sort_id = this.innerHTML;
+    $.ajax({
+        url:"sort.php",
+        method:"POST",
+        data:{sort_id:sort_id},
+        success:function(data)
+        {
+            content.innerHTML=data;
         }
     })
 });
