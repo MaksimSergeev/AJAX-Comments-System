@@ -2,7 +2,7 @@
 // Error reporting:
 error_reporting(E_ALL);
 require_once('autoload.php');
-//	Select all the comments and populate the $comments array with objects
+//Select all the comments and populate the $comments array with objects
 $db = Db::getConnection();
 $comments = array();
 $result = $db->query("SELECT * FROM comments ORDER BY id ASC");
@@ -11,7 +11,6 @@ $result->setFetchMode(PDO::FETCH_ASSOC);
 while ($row = $result->fetch()) {
     $comments[] = new Comment($row);
 }
-
 ?>
 
 <!DOCTYPE html>
@@ -28,7 +27,7 @@ while ($row = $result->fetch()) {
     <div class="col-md-3"></div>
     <div class="col-md-6">
         <h1 class="title-comment">Leave a comment</h1>
-        <!--sort-list-->
+<!--sort-list-->
         <div id="sort-head">
             <div class="dropdown">
                 <button class="btn btn-primary dropdown-toggle btn-xs" type="button" data-toggle="dropdown">Sort by:
@@ -43,16 +42,17 @@ while ($row = $result->fetch()) {
                 </ul>
             </div>
         </div>
-        <!--sort-list-->
+<!--sort-list-->
         <div id="content">
             <?php
+
             //	Output the comments one by one:
             foreach ($comments as $c) {
                 echo $c->markup();
             }
             ?>
         </div>
-        <!--form_add_comment-->
+<!--form_add_comment-->
         <div class="form-area" id="addCommentContainer">
             <form role="form" id="addCommentForm" method="post" action="">
                 <h3>Add a Comment</h3>
@@ -70,11 +70,11 @@ while ($row = $result->fetch()) {
                 </div>
             </form>
         </div>
-        <!--form_add_comment-->
+<!--form_add_comment-->
         <div class="col-md-3"></div>
     </div>
 
-    <!--modal_edit-->
+<!--modal_edit-->
     <div id="userModal" class="modal fade">
         <div class="modal-dialog">
             <form method="post" id="user_form" enctype="multipart/form-data">
@@ -97,7 +97,7 @@ while ($row = $result->fetch()) {
             </form>
         </div>
     </div>
-    <!--modal_edit-->
+<!--modal_edit-->
 
     <script type="text/javascript" src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>

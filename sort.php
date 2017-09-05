@@ -6,7 +6,8 @@ if (isset($_POST["sort_id"])) {
 
     $db = Db::getConnection();
     $query = "SELECT * FROM comments ORDER BY ";
-    //switch key for query
+    
+    //switch key for query:
     switch ($_POST["sort_id"]) {
         case 'Name A-Z': $query .= "name ASC";
             break;
@@ -30,6 +31,7 @@ if (isset($_POST["sort_id"])) {
         $comments[] = new Comment($row);
     }
     if(isset($comments)) {
+    	
         //Output comments
         foreach ($comments as $c) {
             echo $c -> markup();

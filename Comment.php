@@ -71,6 +71,30 @@ class Comment
 
         return true;
     }
+    public static function validateEdit(&$arr)
+    {
+
+        $errors = array();
+        $data = array();
+
+        // Using the filter with a custom callback function:
+        if (!($data['body'] = filter_input(INPUT_POST, 'body', FILTER_CALLBACK, array('options' => 'Comment::validate_text')))) {
+            $errors['body'] = '  Please enter a comment body!';
+        }
+
+        if (!empty($errors)) {
+            // If there are errors, copy the $errors array to $arr:
+            $arr = $errors;
+            return false;
+        }
+
+        // If the data is valid, sanitize all the data and copy it to $arr:
+        foreach ($data as $k => $v) {
+            $arr[$k] = $v;
+        }
+
+        return true;
+    }
 
     //	This method is used internally FILTER_CALLBACK:
     private static function validate_text($str)
@@ -88,5 +112,3 @@ class Comment
         return $str;
     }
 }
-
-?>

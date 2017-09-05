@@ -17,11 +17,10 @@ if($validates)
     $stmt -> execute();
 
 	$arr['dt'] = date('r',time());
-	$arr['id'] = $db -> lastInsertId();
+	$arr['id'] = $db->lastInsertId();
 
 	//stripslashes to all the elements in the array
 	$arr = array_map('stripslashes',$arr);
-	
 	$insertedComment = new Comment($arr);
 
 	// Outputting the markup of the just-inserted comment
@@ -33,5 +32,3 @@ else
 	//Outputting the error messages
 	echo '{"status":0,"errors":'.json_encode($arr).'}';
 }
-
-?>

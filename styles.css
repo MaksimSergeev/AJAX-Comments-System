@@ -44,10 +44,6 @@
 	color: red;
 	font-size:12px;
 }
-
-#addCommentForm h3 {
-	text-align: center;
-}
 .dropdown {
 	position: relative;
 	display: inline-block;
@@ -64,4 +60,7 @@
 #sort-head {
 	background-color: #E8E8E8;
 	margin-bottom: 20px;
+}
+#addCommentForm h3 {
+	text-align: center;
 }

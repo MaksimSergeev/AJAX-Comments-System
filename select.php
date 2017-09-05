@@ -4,7 +4,7 @@ require_once('autoload.php');
 
 if (isset($_POST["com_id"])) {
     
-    // select comment for insert to textarea (body) 
+    // select comment for insert to textarea (body): 
     $output = array();
     $db = Db::getConnection();
     $db->beginTransaction();
