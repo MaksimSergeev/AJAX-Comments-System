@@ -8,7 +8,8 @@ if (isset($_POST["com_id"])) {
     $output = array();
     $db = Db::getConnection();
     $db->beginTransaction();
-    $stmt = $db->prepare("SELECT body FROM comments WHERE id = '".$_POST["com_id"]."'");
+    $stmt = $db->prepare("SELECT body FROM comments WHERE id = :id");
+    $stmt->bindParam(':id', $_POST["com_id"], PDO::PARAM_INT);
     $stmt->execute();
     $result = $stmt->fetchAll();
     foreach ($result as $row) {

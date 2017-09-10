@@ -5,8 +5,8 @@ require_once('autoload.php');
 $arr = array();
 $validates = Comment::validate($arr);
 
-if($validates)
-{
+if($validates) {
+	
 	//Insert to database
     $db = Db::getConnection();
     $db -> beginTransaction();

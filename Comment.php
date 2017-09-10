@@ -1,17 +1,14 @@
 <?php
 
-class Comment
-{
+class Comment {
     private $data = array();
 
-    public function __construct($row)
-    {
+    public function __construct($row) {
         $this->data = $row;
     }
 
     //	This method outputs the XHTML markup of the comment:
-    public function markup()
-    {
+    public function markup() {
         // Setting up an alias, so we don't have to write $this->data every time:
         $d = &$this->data;
 
@@ -35,8 +32,7 @@ class Comment
     }
 
     // This method is used to validate the data sent via AJAX:
-    public static function validate(&$arr)
-    {
+    public static function validate(&$arr) {
 
         $errors = array();
         $data = array();
@@ -71,8 +67,8 @@ class Comment
 
         return true;
     }
-    public static function validateEdit(&$arr)
-    {
+    
+    public static function validateEdit(&$arr) {
 
         $errors = array();
         $data = array();
@@ -97,11 +93,10 @@ class Comment
     }
 
     //	This method is used internally FILTER_CALLBACK:
-    private static function validate_text($str)
-    {
+    private static function validate_text($str) {
+        
         if (mb_strlen($str, 'utf8') < 1)
             return false;
-
         // Encode all html special characters (<, >, ", & .. etc) and convert
         // the new line characters to <br> tags:
         $str = nl2br(htmlspecialchars($str));

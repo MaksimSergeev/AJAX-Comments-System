@@ -1,8 +1,7 @@
 <?php
-class Db
-{
-    public static function getConnection()
-    {
+class Db {
+	
+    public static function getConnection() {
         $paramsPath = 'db_params.php';
         $params = include($paramsPath);
 

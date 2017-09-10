@@ -7,6 +7,7 @@ if (isset($_POST["sort_id"])) {
     $db = Db::getConnection();
     $query = "SELECT * FROM comments ORDER BY ";
     
+    //probably bad practice :(
     //switch key for query:
     switch ($_POST["sort_id"]) {
         case 'Name A-Z': $query .= "name ASC";
